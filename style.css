@@ -38,7 +38,7 @@ body {
     transition: 0.3s linear;
 }
 
-#header, #form, #datetime {
+#header, #form {
     margin: 0 1rem;
     min-height: 10vh;
     width: 100%;
@@ -89,11 +89,11 @@ body {
     background-image: linear-gradient(100deg, #d4f1ff, #ffffff);
 }
 
+
 .darker-theme {
     background-image: linear-gradient(100deg, #001214, #001f29);
 }
 
-/* Animation */
 #title {
     white-space: pre;
     overflow: hidden;     
@@ -125,7 +125,7 @@ form input {
     width: 100%;
 }
 
-/* Input themes */
+
 form input.standard-input {
     background-color: #181a1a;
     color: rgb(247, 226, 223);
@@ -178,7 +178,7 @@ button:hover {
     cursor: pointer;
 }
 
-/* Button themes */
+
 button.standard-button {
     background-color: rgb(247, 226, 223);
     color: rgb(0, 0, 0);
@@ -224,11 +224,10 @@ form button {
 
 .task {
     min-width: 25%;
-
     list-style: none;
 }
 
-.todo {
+.task {
     margin: 1rem;
     /* background: rgb(247, 226, 223); */
     /* color: black; */
@@ -284,7 +283,7 @@ form button {
 }
 
 
-.completed {
+.task-completed {
     transition: 0.2s;
     text-decoration: line-through;
     opacity: 0.5;
@@ -296,58 +295,4 @@ form button {
     opacity: 0;
 }
 
-/* Responsive design */
-@media only screen and (max-width: 1000px) {
-    .flexrow-container {
-        align-self: unset;
-        margin-right: 0;
-    }
-}
 
-@media only screen and (max-width: 800px) {
-    #header {
-        font-size: 2rem;
-    }
-
-    #title {
-        animation: 
-            animated-text 3s steps(16,end) 0.5s 1 normal both,
-            animated-cursor 750ms steps(16,end) infinite;
-        margin-bottom: 10px;
-        margin-top: 30px;
-        max-width: 330px;
-    }
-}
-
-@media only screen and (max-width: 400px) {
-    #header {
-        font-size: 1.5rem;
-    }
-
-    #title {
-        animation: 
-            animated-text 3.5s steps(16,end) 0.5s 1 normal both,
-            animated-cursor 750ms steps(16,end) infinite;
-        max-width: 255px;
-    }
-}
-
-@media only screen and (max-width: 400px) {
-    form {
-        align-items: center;
-        flex-direction: column;
-    }
-
-    form input {
-        border-radius: 17px;
-    }
-
-    form button {
-        border-radius: 15px;
-        margin-top: 15px;
-        width: 50%;
-    }
-    form > button.light-button {
-        box-shadow: 0 0 5px lightgray;
-    }
-}
