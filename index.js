@@ -1,4 +1,7 @@
 const taskArray = [];
+const standardTheme = document.querySelector('.standard-theme');
+const lightTheme = document.querySelector('.light-theme');
+const darkerTheme = document.querySelector('.darker-theme');
 
 document.getElementById('new-task-form').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -6,6 +9,9 @@ document.getElementById('new-task-form').addEventListener('submit', function(eve
     makeNewTask(taskName);
 });
 
+standardTheme.addEventListener('click', () => changeTheme('standard'));
+lightTheme.addEventListener('click', () => changeTheme('light'));
+darkerTheme.addEventListener('click', () => changeTheme('darker'));
 function makeNewTask(name) {
     const task = {
         id: generateUniqueId(),
@@ -15,6 +21,15 @@ function makeNewTask(name) {
     taskArray.push(task);
     saveToLocalStorage();
     filterAndSortList();
+}
+function changeTheme(theme) {
+    // Remove current theme class
+    document.body.classList.remove('standard', 'light', 'darker');
+    // Add new theme class
+    document.body.classList.add(theme);
+
+    // Optionally, save the current theme to localStorage to persist theme choice across sessions
+    localStorage.setItem('currentTheme', theme);
 }
 
 function filterAndSortList() {
