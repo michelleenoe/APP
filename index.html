@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ToDo App</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="global.css">
 </head>
+
 <body>
 <div id="app">
     <header>
@@ -12,7 +15,6 @@
     </header>
     <form id="new-task-form">
         <input type="text" id="task-input" placeholder="Tilføj ny opgave..." required />
-        <input type="number" id="quantity-input" placeholder="Antal" required />
         <button type="submit">Tilføj Opgave</button>
     </form>
     <ul id="task-list">
@@ -27,12 +29,11 @@
 <template id="task-template">
     <li class="task">
         <span class="task-name"></span>
-        <span class="task-quantity"></span>
         <button class="done-button">Færdig</button>
         <button class="delete-button">Slet</button>
     </li>
 </template>
 
-<script src="app.js"></script>
+<script src="index.js"></script>
 </body>
 </html>
