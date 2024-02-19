@@ -95,7 +95,6 @@ body {
 
 /* Animation */
 #title {
-    border-right: solid 3px rgba(0, 0, 0, 0.75);
     white-space: pre;
     overflow: hidden;     
     letter-spacing: 0.20rem;
