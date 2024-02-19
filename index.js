@@ -64,7 +64,7 @@ function saveToLocalStorage() {
     localStorage.setItem('tasks', JSON.stringify(taskArray));
 }
 
-// Load tasks from localStorage on page load
+// localStorage 
 document.addEventListener('DOMContentLoaded', () => {
     const savedTasks = JSON.parse(localStorage.getItem('tasks'));
     if (savedTasks) {
