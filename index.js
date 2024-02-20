@@ -3,7 +3,7 @@ const standardTheme = document.querySelector('.standard-theme');
 const lightTheme = document.querySelector('.light-theme');
 const darkerTheme = document.querySelector('.darker-theme');
 
-document.getElementById('new-task-form').addEventListener('submit', function(event) {
+document.getElementById('form').addEventListener('submit', function(event) {
     event.preventDefault();
     const taskName = document.getElementById('task-input').value;
     makeNewTask(taskName);
@@ -44,16 +44,24 @@ function filterAndSortList() {
 
 function showList(tasks, elementId) {
     const listElement = document.getElementById(elementId);
-    listElement.innerHTML = '';
+    listElement.innerHTML = ''; 
     tasks.forEach(task => {
         const clone = document.getElementById('task-template').content.cloneNode(true);
         clone.querySelector('.task-name').textContent = task.name;
+        
+ 
         const doneButton = clone.querySelector('.done-button');
         doneButton.addEventListener('click', () => toggleDone(task.id));
         clone.querySelector('.delete-button').addEventListener('click', () => deleteTask(task.id));
+
+        if (elementId === 'completed-tasks') {
+            clone.querySelector('.task').classList.add('completed');
+        }
+        
         listElement.appendChild(clone);
     });
 }
+
 
 function toggleDone(id) {
     const task = taskArray.find(task => task.id === id);
