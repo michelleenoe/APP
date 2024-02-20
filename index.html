@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo App</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <div id="header">
@@ -23,20 +24,29 @@
         </form>
     </div>
 
-    <ul id="task-list">
-        <!-- Opgaverne vil blive tilføjet her -->
-    </ul>
-    <h2>Færdige Opgaver</h2>
-    <ul id="completed-tasks">
-        <!-- Færdige opgaver vil blive vist her -->
-    </ul>
+    <div class="task-container">
+        <div class="ongoing-tasks">
+            <h2>Igangværende opgaver</h2>
+            <ul id="task-list">
+                <!-- Opgaverne vil blive tilføjet her -->
+            </ul>
+        </div>
+        <div class="completed-tasks">
+            <h2>Færdige Opgaver</h2>
+            <ul id="completed-tasks">
+                <!-- Færdige opgaver vil blive vist her -->
+            </ul>
+        </div>
+    </div>
     
     <template id="task-template">
+        <div class="todo">
         <li class="task">
             <span class="task-name"></span>
-            <button class="done-button">Færdig</button>
-            <button class="delete-button">Slet</button>
+            <button class="done-button"><i class="fas fa-check"></i></button>
+            <button class="delete-button"><i class="fas fa-trash"></i></button>
         </li>
+    </div>
     </template>
     <script src="index.js"></script>
 </body>

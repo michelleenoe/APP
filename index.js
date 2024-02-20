@@ -9,15 +9,18 @@ document.getElementById('new-task-form').addEventListener('submit', function(eve
     makeNewTask(taskName);
 });
 
+//Temaer skal sidde på body? eller som html-attribut
 standardTheme.addEventListener('click', () => changeTheme('standard'));
 lightTheme.addEventListener('click', () => changeTheme('light'));
 darkerTheme.addEventListener('click', () => changeTheme('darker'));
+
 function makeNewTask(name) {
     const task = {
         id: generateUniqueId(),
         name: name,
         done: false
     };
+
     taskArray.push(task);
     saveToLocalStorage();
     filterAndSortList();
@@ -46,7 +49,6 @@ function showList(tasks, elementId) {
         const clone = document.getElementById('task-template').content.cloneNode(true);
         clone.querySelector('.task-name').textContent = task.name;
         const doneButton = clone.querySelector('.done-button');
-        doneButton.textContent = task.done ? 'Gendan' : 'Færdig';
         doneButton.addEventListener('click', () => toggleDone(task.id));
         clone.querySelector('.delete-button').addEventListener('click', () => deleteTask(task.id));
         listElement.appendChild(clone);
@@ -87,3 +89,4 @@ document.addEventListener('DOMContentLoaded', () => {
         filterAndSortList();
     }
 });
+

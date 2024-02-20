@@ -214,6 +214,18 @@ form button {
     border-bottom-right-radius: 15px;
     min-width: 100px;
 }
+.task-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Definerer to kolonner med lige stor bredde */
+    gap: 300px; /* Tilføjer noget mellemrum mellem kolonnerne */
+    align-items: start; /* Sørger for, at indholdet i toppen af kolonnerne starter på samme niveau */
+    justify-content: center; /* Centrerer grid-containeren i forhold til dens forælder, hvis du ønsker det */
+}
+
+footer {
+    margin-top: auto;
+}
+
 
 #myUnOrdList {
     display: flex;
@@ -227,7 +239,7 @@ form button {
     list-style: none;
 }
 
-.task {
+.todo li {
     margin: 1rem;
     /* background: rgb(247, 226, 223); */
     /* color: black; */
@@ -253,7 +265,7 @@ form button {
     background-color: #01394c;
 }
 
-.todo li{
+.task .task-name{
     padding: 7px;
     /* word-wrap: break-word; */
     /* flex-wrap: wrap; */
@@ -265,7 +277,7 @@ form button {
     overflow-wrap: anywhere;
 }
 
-.check-btn, .delete-btn {
+.done-button, .delete-button {
     font-size: 19px;
     cursor: pointer;
     width: 2em;
@@ -283,7 +295,7 @@ form button {
 }
 
 
-.task-completed {
+.completed {
     transition: 0.2s;
     text-decoration: line-through;
     opacity: 0.5;
@@ -294,5 +306,4 @@ form button {
     transform: translateY(45rem) rotateZ(45deg);
     opacity: 0;
 }
-
 
