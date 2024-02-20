@@ -239,7 +239,7 @@ footer {
     list-style: none;
 }
 
-.todo li {
+.todo {
     margin: 1rem;
     /* background: rgb(247, 226, 223); */
     /* color: black; */
