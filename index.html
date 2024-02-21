@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="da">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,26 +8,27 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
+
 <body>
     <div id="header">
         <div class="flexrow-container">
-            <div class="standard-theme theme-selector"></div>
             <div class="light-theme theme-selector"></div>
             <div class="darker-theme theme-selector"></div>
         </div>
-        <h1 id="title">To Do App<div id="border"></div></h1>
+        <h1 id="title">Hvad skal du nå i dag?<div id="border"></div>
+        </h1>
     </div>
 
-        <div id="form">
-            <form>
+    <div id="form">
+        <form>
             <input id="task-input" class="todo-input" type="text" placeholder="Add a task.">
-            <button class="todo-btn" type="submit">I Got This!</button>
+            <button class="todo-btn" type="submit">Tilføj opgave</button>
         </form>
     </div>
 
     <div class="task-container">
         <div class="ongoing-tasks">
-            <h2>Igangværende opgaver</h2>
+            <h2>To Do Liste</h2>
             <ul id="task-list">
                 <!-- Opgaverne vil blive tilføjet her -->
             </ul>
@@ -38,19 +40,20 @@
             </ul>
         </div>
     </div>
-    
+
     <template id="task-template">
         <div class="todo">
-        <li class="task">
-            <span class="task-name"></span>
-            <button class="done-button"><i class="fas fa-check"></i></button>
-            <button class="delete-button"><i class="fas fa-trash"></i></button>
-        </li>
-    </div>
+            <li class="task">
+                <span class="task-name"></span>
+                <button class="done-button"><i class="fas fa-check"></i></button>
+                <button class="delete-button"><i class="fas fa-trash"></i></button>
+            </li>
+        </div>
     </template>
     <script src="index.js"></script>
 </body>
 <footer>
-                <img src="./assets/logo1.svg" alt="Logo" style="height: 200px; width: auto;">
+    <img src="./assets/logo1.svg" alt="Logo" style="height: 100px; width: auto;">
 </footer>
+
 </html>
