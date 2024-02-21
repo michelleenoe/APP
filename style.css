@@ -1,251 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    /* Basisfarver */
+    --font-primary: #1a150e;
+    --font-secondary: white;
+    
+    /* Baggrundsfarver */
+    --light-background: linear-gradient(100deg, #ffeecc74, #FFDDCC, #FFCCCC, #FEBBCC);
+    --light-theme-background: linear-gradient(100deg, #FFEECC, #FEBBCC);
+  
+    --darker-background: linear-gradient(100deg, #0B2447, #19376D, #576CBC);
+    --darker-theme-background: linear-gradient(100deg, #0B2447, #A5D7E8); 
+    
+    /* Input og knapfarver */
+    --input-light: #5e5c5d37;
+    --input-darker: #01394c;
+    --button-light: #fdddcd; 
+    --button-darker: #002837;
+    
+    /* Opgave container farver */
+    --ongoing-tasks-light: #f0f4f8;
+    --completed-tasks-light: #d6e4ff;
+    --ongoing-tasks-darker: #12232e;
+    --completed-tasks-darker: #163344;
+    
+    /* Hover effekter */
+    --hover-light-input: #919699;
+    --hover-light-button: #f0f0f0;
+    --hover-darker-input: #013141;
+    --hover-darker-button: #001f29;
+    
+    /* Særlige elementer */
+    --todo-light-background: #aeb1b4;
+    --todo-darker-background: #01394c;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Anta", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
 body {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    font-family: "Work Sans", sans-serif;
-    min-height: 100vh;
-    padding-top: 3%;
-}
-
-/* Body light or darker themes */
-
-.light {
-    background-image: linear-gradient(100deg, #d4f1ff, #ffffff);
-    color: #1a150e;
-    transition: 0.3s linear;
-}
-
-.darker {
-    background-image: linear-gradient(100deg, #001214, #001f29);
-    color: white;
-    transition: 0.3s linear;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: "Work Sans", sans-serif;
+  padding-top: 3%;
 }
 
 #header,
 #form {
-    margin: 0 1rem;
-    min-height: 10vh;
-    width: 100%;
+  margin: 0 1rem;
+  min-height: 10vh;
+  width: 100%;
 }
 
 #header {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    font-size: 2rem;
-    min-height: 25vh;
-    width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 2rem;
+  min-height: 25vh;
 }
 
-/* Theme buttons div */
 .flexrow-container {
-    align-items: center;
-    align-self: flex-end;
-    display: flex;
-    justify-content: space-around;
-    margin-right: 3%;
+  align-items: center;
+  align-self: flex-end;
+  display: flex;
+  justify-content: space-around;
+  margin-right: 3%;
 }
 
 .theme-selector {
-    border-radius: 100%;
-    height: 35px;
-    margin: 0 8px;
-    width: 35px;
+  border-radius: 100%;
+  height: 35px;
+  margin: 0 8px;
+  width: 35px;
 }
 
 .theme-selector:hover {
-    box-shadow: white 0 0 8px;
-    cursor: pointer;
-}
-
-.light-theme {
-    background-image: linear-gradient(100deg, #ffffff, #ffffff);
-    border: 2px solid #c7c5c5;
-}
-
-.darker-theme {
-    background-image: linear-gradient(100deg, #001214, #000000);
-    border: 2px solid #d4d4d4;
+  box-shadow: white 0 0 8px;
+  cursor: pointer;
 }
 
 #title {
-    white-space: pre;
-    overflow: hidden;
-    letter-spacing: 0.2rem;
-    margin-top: 50px;
-    max-width: auto;
-    text-align: center;
-    padding: 0 20px;
+  overflow: hidden;
+  margin-top: 50px;
+  max-width: auto;
+  text-align: center;
+  padding: 0 20px;
 }
 
 form {
-    display: flex;
-    font-size: 1.7rem;
-    justify-content: center;
-    margin: 0auto;
-    padding: 0.8rem;
-    width: 100%;
+  display: flex;
+  font-size: 1.7rem;
+  justify-content: center;
+  margin: 0auto;
+  padding: 0.8rem;
+  width: 100%;
 }
 
 form input {
-    padding: 10px;
-    font-size: 17px;
-    border: none;
-    outline: none;
-    border-top-left-radius: 17px;
-    border-bottom-left-radius: 17px;
-    max-width: 500px;
-    transition: background-color 200ms ease-in-out;
-    width: 100%;
+  padding: 10px;
+  font-size: 17px;
+  border: none;
+  outline: none;
+  border-top-left-radius: 17px;
+  border-bottom-left-radius: 17px;
+  max-width: 500px;
+  transition: background-color 200ms ease-in-out;
+  width: 100%;
 }
-
-form input.light-input {
-    background-color: #aeb1b4;
-    color: #1a150e;
-}
-
-form input.light-input::placeholder {
-    color: #1a150e;
-    opacity: 0.7;
-}
-
-form input.darker-input {
-    background-color: #01394c;
-    color: white;
-}
-
-form input.darker-input::placeholder {
-    color: white;
-    opacity: 0.7;
-}
-
 form input:hover {
-    cursor: text;
+  cursor: text;
 }
-
-form input.light-input:hover {
-    background-color: #919699;
-}
-
-form input.darker-input:hover {
-    background-color: #013141;
-}
-
 button {
-    border: none;
-    outline: none;
+  border: none;
+  outline: none;
 }
 
 button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
-
-button.light-button {
-    background-color: white;
-    color: #1a150e;
-}
-
-button.light-button:hover {
-    background-color: #f0f0f0;
-}
-
-button.darker-button {
-    background-color: #002837;
-    color: white;
-}
-
-button.darker-button:hover {
-    background-color: #001f29;
-}
-
 form button {
-    padding: 10px;
-    font-size: 17px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    min-width: 100px;
+  padding: 10px;
+  font-size: 17px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  min-width: 100px;
 }
 
 .task-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-    justify-content: center;
-    width: 80%;
-    padding: 20px;
-    gap: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  justify-content: center;
+  width: 80%;
+  padding: 20px;
+  gap: 40px;
 }
 
 .ongoing-tasks h2,
 .completed-tasks h2 {
-    text-align: center;
+  text-align: center;
 }
 
-.ongoing-tasks {
-    background-color: #f0f4f8;
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
+.ongoing-tasks,
 .completed-tasks {
-    background-color: #d6e4ff;
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 20px;
+  background-color: var(--ongoing-tasks-light);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  min-width: 300px;
+  max-width: 600px; 
+  width: 100%; 
+  min-height: 200px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
+
 
 .todo li {
-    margin: 1rem;
-    font-size: 19px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.25em 0.5em;
-    border-radius: 30px;
-}
-
-.light-todo {
-    background-color: #aeb1b4;
-}
-
-.darker-todo {
-    background-color: #01394c;
+  margin: 1rem;
+  font-size: 19px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25em 0.5em;
+  border-radius: 30px;
 }
 
 .task .task-name {
-    padding: 15px;
-    font-size: 20px;
-    flex: 1;
+  padding: 15px;
+  font-size: 20px;
+  flex: 1;
 }
 
 .done-button,
 .delete-button {
-    font-size: 19px;
-    cursor: pointer;
-    width: 2em;
-    height: 2em;
-    border-radius: 80%;
-    margin: 0 5px;
+  font-size: 19px;
+  cursor: pointer;
+  width: 2em;
+  height: 2em;
+  border-radius: 80%;
+  margin: 0 5px;
 }
 
 .fa-trash,
 .fa-check {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 .completed {
-    transition: 0.2s;
-    text-decoration: line-through;
-    opacity: 0.5;
+  transition: 0.2s;
+  text-decoration: line-through;
+  opacity: 0.5;
 }
+
+
+.light {
+    background-image: var(--light-background);
+    color: var(--font-primary);
+  }
+  
+  .light-theme {
+    background-image: var(--light-theme-background);
+  }
+  
+  form input.light-input {
+    background-color: var(--input-light);
+    color: var(--font-primary);
+  }
+  
+  form input.light-input::placeholder {
+    color: var(--font-primary);
+    opacity: 0.7;
+  }
+  
+  button.light-button {
+    background-color: var(--button-light);
+    color: var(--font-primary);
+  }
+  
+  button.light-button:hover {
+    background-color: var(--hover-light-button);
+  }
+  
+  .ongoing-tasks {
+    background-color: var(--ongoing-tasks-light);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .completed-tasks {
+    background-color: var(--completed-tasks-light);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .darker {
+    background-image: var(--darker-background);
+    color: var(--font-secondary);
+    transition: 0.3s linear;
+  }
+  
+  .darker-theme {
+    background-image: var(--darker-theme-background);
+    border: 2px solid #d4d4d4;
+  }
+  
+  form input.darker-input {
+    background-color: var(--input-darker);
+    color: var(--font-secondary);
+  }
+  
+  form input.darker-input:hover {
+    background-color: var(--hover-darker-input);
+  }
+  
+  button.darker-button {
+    background-color: var(--button-darker);
+    color: var(--font-secondary);
+  }
+  
+  button.darker-button:hover {
+    background-color: var(--hover-darker-button);
+  }
+  
+  .darker .ongoing-tasks {
+    background-color: var(--ongoing-tasks-darker);
+    color: #eceff1; 
+    border: 1px solid #0f3049; 
+  }
+  
+  .darker .completed-tasks {
+    background-color: var(--completed-tasks-darker);
+    color: #eceff1; 
+    border: 1px solid #1a4258;
+  }
+  
