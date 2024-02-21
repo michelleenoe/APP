@@ -1,38 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-    /* Basisfarver */
-    --font-primary: #1a150e;
-    --font-secondary: white;
-    
-    /* Baggrundsfarver */
-    --light-background: linear-gradient(100deg, #ffeecc74, #FFDDCC, #FFCCCC, #FEBBCC);
-    --light-theme-background: linear-gradient(100deg, #FFEECC, #FEBBCC);
-  
-    --darker-background: linear-gradient(100deg, #0B2447, #19376D, #576CBC);
-    --darker-theme-background: linear-gradient(100deg, #0B2447, #A5D7E8); 
-    
-    /* Input og knapfarver */
-    --input-light: #5e5c5d37;
-    --input-darker: #01394c;
-    --button-light: #fdddcd; 
-    --button-darker: #002837;
-    
-    /* Opgave container farver */
-    --ongoing-tasks-light: #f0f4f8;
-    --completed-tasks-light: #d6e4ff;
-    --ongoing-tasks-darker: #12232e;
-    --completed-tasks-darker: #163344;
-    
-    /* Hover effekter */
-    --hover-light-input: #919699;
-    --hover-light-button: #f0f0f0;
-    --hover-darker-input: #013141;
-    --hover-darker-button: #001f29;
-    
-    /* Særlige elementer */
-    --todo-light-background: #aeb1b4;
-    --todo-darker-background: #01394c;
+  --font-primary: #d16666;
+  --font-secondary: #cacbce;
+  --light-background: #f9cbb0;
+  --light-theme-background: #f9b38b;
+  --darker-background: #263238;
+  --darker-theme-background: #37474f;
+  --input-light: #fffefd8b;
+  --button-light: #fab089;
+  --input-darker: #37474f;
+  --button-darker: #546e7a;
+  --ongoing-tasks-light: #fffefd8b;
+  --completed-tasks-light:  #ebe4de8b;
+  --ongoing-tasks-darker: #455a64;
+  --completed-tasks-darker: #607d8b;
+  --hover-light-input: #edd4cc;
+  --hover-light-button: #ffc4a3;
+  --hover-darker-input: #546e7a;
+  --hover-darker-button: #78909c;
 }
 
 * {
@@ -75,7 +61,11 @@ body {
   justify-content: space-around;
   margin-right: 3%;
 }
-
+h1,
+h2,
+p {
+  color: var(--font-light-color);
+}
 .theme-selector {
   border-radius: 100%;
   height: 35px;
@@ -154,16 +144,14 @@ form button {
 .completed-tasks {
   background-color: var(--ongoing-tasks-light);
   border-radius: 5px;
-  margin-bottom: 20px;
   min-width: 300px;
-  max-width: 600px; 
-  width: 100%; 
-  min-height: 200px; 
+  max-width: 600px;
+  width: 100%;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
-
 
 .todo li {
   margin: 1rem;
@@ -202,87 +190,65 @@ form button {
   opacity: 0.5;
 }
 
-
+body,
 .light {
-    background-image: var(--light-background);
-    color: var(--font-primary);
-  }
-  
-  .light-theme {
-    background-image: var(--light-theme-background);
-  }
-  
-  form input.light-input {
-    background-color: var(--input-light);
-    color: var(--font-primary);
-  }
-  
-  form input.light-input::placeholder {
-    color: var(--font-primary);
-    opacity: 0.7;
-  }
-  
-  button.light-button {
-    background-color: var(--button-light);
-    color: var(--font-primary);
-  }
-  
-  button.light-button:hover {
-    background-color: var(--hover-light-button);
-  }
-  
-  .ongoing-tasks {
-    background-color: var(--ongoing-tasks-light);
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }
-  
-  .completed-tasks {
+  background-color: var(--light-background);
+  color: var(--font-primary);
+}
+
+.light-theme {
+  background-color: var(--light-theme-background);
+}
+.light .completed-tasks {
     background-color: var(--completed-tasks-light);
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 20px;
   }
   
-  .darker {
-    background-image: var(--darker-background);
-    color: var(--font-secondary);
-    transition: 0.3s linear;
-  }
-  
-  .darker-theme {
-    background-image: var(--darker-theme-background);
-    border: 2px solid #d4d4d4;
-  }
-  
-  form input.darker-input {
-    background-color: var(--input-darker);
-    color: var(--font-secondary);
-  }
-  
-  form input.darker-input:hover {
-    background-color: var(--hover-darker-input);
-  }
-  
-  button.darker-button {
-    background-color: var(--button-darker);
-    color: var(--font-secondary);
-  }
-  
-  button.darker-button:hover {
-    background-color: var(--hover-darker-button);
-  }
-  
-  .darker .ongoing-tasks {
-    background-color: var(--ongoing-tasks-darker);
-    color: #eceff1; 
-    border: 1px solid #0f3049; 
-  }
-  
-  .darker .completed-tasks {
-    background-color: var(--completed-tasks-darker);
-    color: #eceff1; 
-    border: 1px solid #1a4258;
-  }
-  
+
+input.light-input {
+  background-color: var(--input-light);
+  color: var(--font-primary);
+}
+button.light-button {
+  background-color: var(--button-light);
+}
+
+input.light-input:hover,
+button.light-button:hover {
+  background-color: var(--hover-light-input);
+  color: var(--font-primary);
+}
+
+.ongoing-tasks,
+.completed-tasks {
+  background-color: var(--ongoing-tasks-light);
+  min-height: 200px;
+}
+
+.darker {
+  background-color: var(--darker-background);
+  color: var(--font-secondary);
+}
+
+.darker-theme {
+  background-color: var(--darker-theme-background);
+}
+
+input.darker-input,
+button.darker-button {
+  background-color: var(--input-darker);
+  color: var(--font-secondary);
+}
+
+input.darker-input:hover,
+button.darker-button:hover {
+  background-color: var(--hover-darker-input);
+  color: var(--font-secondary);
+}
+
+.darker .ongoing-tasks {
+  background-color: var(--ongoing-tasks-darker);
+}
+
+.darker .completed-tasks {
+  background-color: var(--completed-tasks-darker);
+}
