@@ -11,6 +11,7 @@
   --button-light: #fab089;
   --input-darker: #37474f;
   --button-darker: #546e7a;
+  --button-txt:546e7a;
   --ongoing-tasks-light: #fffefd8b;
   --completed-tasks-light:  #ebe4de8b;
   --ongoing-tasks-darker: #455a64;
@@ -19,15 +20,17 @@
   --hover-light-button: #ffc4a3;
   --hover-darker-input: #546e7a;
   --hover-darker-button: #78909c;
+  
 }
+
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: normal;
+  font-weight: 400;
+
 }
 
 body {
@@ -60,6 +63,9 @@ body {
   display: flex;
   justify-content: space-around;
   margin-right: 3%;
+}
+h1 {
+    font-weight: 600 !important;
 }
 h1,
 h2,
@@ -182,6 +188,7 @@ form button {
 .fa-trash,
 .fa-check {
   pointer-events: none;
+
 }
 
 .completed {
@@ -203,7 +210,14 @@ body,
     background-color: var(--completed-tasks-light);
   }
   
-
+  .light .done-button, .light .delete-button {
+    background-color: var(--button-light); 
+    color: var(--font-primary); 
+  }
+  .light .done-button:hover, .light .delete-button:hover {
+    background-color: var(--hover-light-button); 
+    color: var(--font-secondary);
+  }
 input.light-input {
   background-color: var(--input-light);
   color: var(--font-primary);
@@ -233,6 +247,7 @@ button.light-button:hover {
   background-color: var(--darker-theme-background);
 }
 
+
 input.darker-input,
 button.darker-button {
   background-color: var(--input-darker);
@@ -252,3 +267,15 @@ button.darker-button:hover {
 .darker .completed-tasks {
   background-color: var(--completed-tasks-darker);
 }
+
+.darker .done-button, .darker .delete-button {
+    background-color: var(--button-darker);
+    color:var(--button-txt);
+    border: 1px solid #ffffff;
+  }
+  
+  .darker .done-button:hover, .darker .delete-button:hover {
+    background-color: var(--hover-darker-button);
+    color: #000000; 
+  }
+  
